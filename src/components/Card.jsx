@@ -1,4 +1,4 @@
-
+import { NavLink } from "react-router-dom";
 
 export default function Card({ data }) {
     const imgPath = "http://localhost:3000/images/" + data.image;
@@ -8,9 +8,9 @@ export default function Card({ data }) {
         <div className="card-body">
           <h5 className="card-title">{data.title}</h5>
           <p className="card-text">{data.abstract.substring(0, 60) + "..."}</p>
-          <a href="#" className="btn btn-primary">
+          <NavLink className="btn btn-primary" to={`${data.id}`}>
             Scopri di più
-          </a>
+          </NavLink>
         </div>
       </div>
     );
