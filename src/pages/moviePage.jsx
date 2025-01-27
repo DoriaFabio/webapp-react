@@ -2,9 +2,7 @@ import { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { MovieContext } from "../context/movieContext";
 
-
-const imgPath = "http://localhost:3000/images/";
-export default function MoviePage({ data }) {
+export default function MoviePage() {
     const { id } = useParams();
     const { movie, movieDetails } = useContext(MovieContext);
 
@@ -17,14 +15,14 @@ export default function MoviePage({ data }) {
         <div>
             {movie ? (
                 <>
-                    <div> {/* Sezione delle informazioni sul film */}
-                        <h1>{movie.title}</h1>
-                        <h6 className='py-2'>By {movie.director}</h6>
-                        <img
-                            src={`http://localhost:3000/images/${movie.image}`}
-                            alt={movie.title}
-                        />
-                        <p>{movie.abstract}</p>
+                {/* Sezione delle informazioni sul film */}
+                    <div className="d-flex py-5 align-items-center justify-content-center"> 
+                        <img src={`http://localhost:3000/images/${movie.image}`} alt={movie.title} className="myimg" />
+                        <div className="px-5">
+                            <h1>{movie.title}</h1>
+                            <h6>By {movie.director}</h6>
+                            <p>{movie.abstract}</p>
+                        </div>
                     </div>
                 </>
             ) : (
