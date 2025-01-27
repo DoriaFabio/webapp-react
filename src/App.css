@@ -1,5 +1,5 @@
 .myimg {
-    width: 150px;
+    width: 140px;
     aspect-ratio: 1/1.5;
 }
 
@@ -21,7 +21,7 @@
 
 body {
     background-color: rgb(18, 15, 15);
-    
+
 }
 
 .mylogo {
@@ -31,4 +31,8 @@ body {
 
 .mybgBlack {
     background-color: black;
+}
+
+.myham {
+    filter: invert(100%);
 }

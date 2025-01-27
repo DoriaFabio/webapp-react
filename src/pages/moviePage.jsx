@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { MovieContext } from "../context/movieContext";
 
+import Form from "../components/Form"
 import Stars from "../components/Stars";
 import ReviewComponent from "../components/ReviewComponent";
 
@@ -32,7 +33,7 @@ export default function MoviePage() {
                     {/* Sezione delle informazioni sul film */}
                     <div className="d-flex py-5 align-items-center justify-content-center">
                         <img src={`http://localhost:3000/images/${movie.image}`} alt={movie.title} className="myimg" />
-                        <div className="px-5">
+                        <div className="px-4">
                             <h1 className="text-white">{movie.title}</h1>
                             <h6 className="text-white">By {movie.director}</h6>
                             <p className="text-white">{movie.abstract}</p>
@@ -44,6 +45,7 @@ export default function MoviePage() {
             ) : (
                 <p>Impossibile caricare i dettagli del film.</p>
             )}
+            <Form />
         </div>
     )
 }
