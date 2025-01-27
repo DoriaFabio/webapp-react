@@ -6,7 +6,7 @@ export default function Card({ data }) {
     return (
       <div className={`${style.mycard} card`}>
         <img src={`${imgPath}`} alt="immagine-film" />
-        <div className="card-body">
+        <div className={`${style.mycardBody}`}>
           <h5 className="card-title">{data.title}</h5>
           <p className="card-text">{data.abstract.substring(0, 60) + "..."}</p>
           <NavLink className="btn btn-primary" to={`${data.id}`}>

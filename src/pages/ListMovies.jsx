@@ -7,7 +7,7 @@ export default function ListMovies() {
     const { movies } = useContext(MovieContext);
 
     return (
-        <main className="container py-3">
+        <main className="container py-5">
             <div className="row gy-4">
                 {movies.map((film) => (
                     <div className="col-12 col-md-4 col-lg-3" key={film.id}>
