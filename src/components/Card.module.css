@@ -2,7 +2,7 @@
     aspect-ratio: 1/1.2;
     border-radius: 12px;
     transition: all 0.5s;
-    border: 1px solid black;
+    border: 0px;
 }
 
 .mycard:hover {
@@ -21,7 +21,39 @@
     padding: 15px;
     background-color: rgb(105, 105, 105);
     color: black;
+    padding-bottom: 25px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
 
+/* .mybtn {
+    text-decoration: none;
+    transition: all 0.5s;
+    color: rgb(243, 240, 255);
+    padding: 10px;
+    background: linear-gradient(90deg, rgba(4,3,31,1) 0%, rgba(6,140,187,1) 100%);
+    border-radius: 10px;
+}
+
+.mybtn:hover {
+    background: linear-gradient(90deg, rgba(6,140,187,1) 0%, rgba(4,3,31,1) 100%);
+} */
+
+.mybtn {
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(210, 216, 202);
+    padding: 10px 20px;
+    border: 1px solid black;
+    background: linear-gradient(90deg, rgb(11, 153, 200) 0%, rgb(4, 115, 159) 25%, rgb(15, 88, 126) 50%, rgba(6,40,73,1) 75%, rgba(4,3,31,1) 100%);
+    background-size: 200%;
+    background-position: 0px 0px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px black;
+    text-shadow: 2px 2px 5px black;
+    text-transform: uppercase;
+    transition: background-position 1s;
+}
+.mybtn:hover {
+    background-position: 100% 0px;
+}

@@ -9,7 +9,7 @@ export default function Card({ data }) {
         <div className={`${style.mycardBody}`}>
           <h5 className="card-title">{data.title}</h5>
           <p className="card-text">{data.abstract.substring(0, 60) + "..."}</p>
-          <NavLink className="btn btn-primary" to={`${data.id}`}>
+          <NavLink className={`${style.mybtn}`} to={`${data.id}`}>
             Scopri di più
           </NavLink>
         </div>
