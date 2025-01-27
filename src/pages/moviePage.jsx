@@ -2,6 +2,8 @@ import { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { MovieContext } from "../context/movieContext";
 
+import Stars from "../components/Stars";
+
 export default function MoviePage() {
     const { id } = useParams();
     const { movie, movieDetails } = useContext(MovieContext);
@@ -22,6 +24,7 @@ export default function MoviePage() {
                             <h1>{movie.title}</h1>
                             <h6>By {movie.director}</h6>
                             <p>{movie.abstract}</p>
+                            <Stars vote={movie.vote_average} />
                         </div>
                     </div>
                 </>
