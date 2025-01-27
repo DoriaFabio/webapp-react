@@ -1,12 +1,13 @@
 import { NavLink } from "react-router-dom";
+import { FaFilm } from "react-icons/fa";
 
 export default function Header() {
   return (
     <header>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <nav className="navbar navbar-expand-lg mybgBlack">
         <div className="container-fluid">
           <NavLink className="navbar-brand" to="/">
-            Navbar
+            <FaFilm className="mylogo"/>
           </NavLink>
           <button
             className="navbar-toggler"
@@ -22,12 +23,12 @@ export default function Header() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <NavLink className="nav-link" to="/">
+                <NavLink className="nav-link text-white" to="/">
                   Home
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/movies">
+                <NavLink className="nav-link text-white" to="/movies">
                   List Film
                 </NavLink>
               </li>
