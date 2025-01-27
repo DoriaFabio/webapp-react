@@ -10,12 +10,12 @@ const MovieProvider = ({ children }) => {
   const [movie, setMovie] = useState(null);
   const [reviews, setReviews] = useState([]);
 
-  useEffect(getData, []);
 
   function getData() {
     axios
       .get(apiUrl + "/movies")
       .then((res) => {
+        //console.log(res.data.data);
         setMovies(res.data.data);
       })
       .catch((error) => {
@@ -30,8 +30,10 @@ const MovieProvider = ({ children }) => {
     axios
       .get(`${apiUrl}/movies/${id}`)
       .then((res) => {
-        setMovie(res.data.data);
-        setReviews(res.data.data.reviews || []);
+        //console.log(res.data);
+        setMovie(res.data);
+        console.log(res.data.reviews);
+        // setReviews(res.data.film || []);
       })
       .catch((err) => {
         console.error(err);
@@ -41,16 +43,17 @@ const MovieProvider = ({ children }) => {
       });
   }
 
-  const data = {
-    movies,
-    movie, 
-    reviews,
-    getData, 
-    movieDetails,
-  };
+  useEffect(getData, []);
+
 
   return (
-    <MovieContext.Provider value={data}>
+    <MovieContext.Provider value={{
+      movies,
+      movie,
+      reviews,
+      getData,
+      movieDetails,
+    }}>
       {children}
     </MovieContext.Provider>
   );
