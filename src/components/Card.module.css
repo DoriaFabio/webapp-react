@@ -26,19 +26,6 @@
     border-bottom-right-radius: 10px;
 }
 
-/* .mybtn {
-    text-decoration: none;
-    transition: all 0.5s;
-    color: rgb(243, 240, 255);
-    padding: 10px;
-    background: linear-gradient(90deg, rgba(4,3,31,1) 0%, rgba(6,140,187,1) 100%);
-    border-radius: 10px;
-}
-
-.mybtn:hover {
-    background: linear-gradient(90deg, rgba(6,140,187,1) 0%, rgba(4,3,31,1) 100%);
-} */
-
 .mybtn {
     display: inline-block;
     text-decoration: none;

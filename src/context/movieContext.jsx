@@ -33,7 +33,7 @@ const MovieProvider = ({ children }) => {
         //console.log(res.data);
         setMovie(res.data);
         console.log(res.data.reviews);
-        // setReviews(res.data.film || []);
+        setReviews(res.data.reviews || []);
       })
       .catch((err) => {
         console.error(err);
@@ -42,6 +42,7 @@ const MovieProvider = ({ children }) => {
         console.log("Finito");
       });
   }
+
 
   useEffect(getData, []);
 

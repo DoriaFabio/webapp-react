@@ -1,14 +1,36 @@
 import { useState } from "react";
+import axios from "axios";
 
 const newReview = {
     name: "",
-    vote: "",
     text: "",
+    vote: "",
 };
 
+const apiUrl = import.meta.env.VITE_API_URL;
 
-function AddReviews({ handleSubmit }) {
+function AddReviews({ movie_id, reloadReviews }) {
     const [formData, setFormData] = useState(newReview);
+    // const [isFormValidated, setIsFormValidated] = useState(true);
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        // setIsFormValidated(true);
+        // if (!e.target.checkValidity()) {
+        //     return;
+        // }
+
+        axios.post(`${apiUrl}/movies/${movie_id}/reviews`, formData).then((res) => {
+            setFormData(newReview);
+            // setIsFormValidated(false);
+            reloadReviews();
+        }).catch((error) => {
+            console.log(error);
+        })
+            .finally(() => {
+                console.log("Finito");
+            });
+    }
 
     function handleInput(e) {
         const value =
@@ -16,16 +38,12 @@ function AddReviews({ handleSubmit }) {
         setFormData({ ...formData, [e.target.name]: value });
     }
 
-    function AddReview(e) {
-        e.preventDefault();
-        handleSubmit({ ...formData });
-        setFormData(newReview);
-    }
-
     return (
         <section className="my-5 container text-white">
             <h2>Aggiungi nuova recensione</h2>
-            <form onSubmit={AddReview}>
+            <form onSubmit={handleSubmit} 
+            // className={`${isFormValidated ? "was-validated" : "needs-validation"}`} noValidate
+            >
                 <div className="mb-3">
                     <label htmlFor="username" className="form-label">
                         Nome:
@@ -38,7 +56,10 @@ function AddReviews({ handleSubmit }) {
                         value={formData.name}
                         onChange={handleInput}
                         name="name"
+                        required
                     />
+                    {/* <div className="valid-feedback">Looks good!</div>
+                    <div className="invalid-feedback">Please choose a username.</div> */}
                     <div id="namelHelp" className="form-text text-info">
                         Scrivi il tuo nome
                     </div>
@@ -69,6 +90,7 @@ function AddReviews({ handleSubmit }) {
                         value={formData.vote}
                         onChange={handleInput}
                         name="vote"
+                        required
                     />
                 </div>
                 <button type="submit" className="btn btn-primary">
