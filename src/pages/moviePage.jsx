@@ -45,7 +45,7 @@ export default function MoviePage() {
             ) : (
                 <p>Impossibile caricare i dettagli del film.</p>
             )}
-            <Form movie_id={movie?.id} reloadReviews={movieDetails}/>
+            <Form movie_id={movie?.id} reloadReviews={movieDetails(id)}/>
         </div>
     )
 }
