@@ -37,3 +37,6 @@ body {
     filter: invert(100%);
 }
 
+.wid {
+    width: 500px;
+}

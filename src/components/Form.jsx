@@ -21,6 +21,7 @@ function AddReviews({ movie_id, reloadReviews }) {
         // }
 
         axios.post(`${apiUrl}/movies/${movie_id}/reviews`, formData).then((res) => {
+            console.log(res);
             setFormData(newReview);
             // setIsFormValidated(false);
             reloadReviews();

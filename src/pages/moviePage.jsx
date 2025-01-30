@@ -11,6 +11,7 @@ export default function MoviePage() {
     const { movie, movieDetails } = useContext(MovieContext);
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         movieDetails(id); // Chiamata al fetch del contesto per ottenere i dettagli del film
     }, [id]);
 
@@ -26,6 +27,8 @@ export default function MoviePage() {
         }
     }
 
+    
+
     return (
         <div>
             {movie ? (
@@ -33,7 +36,7 @@ export default function MoviePage() {
                     {/* Sezione delle informazioni sul film */}
                     <div className="d-flex py-5 align-items-center justify-content-center">
                         <img src={`http://localhost:3000/images/${movie.image}`} alt={movie.title} className="myimg" />
-                        <div className="px-4">
+                        <div className="px-4 wid">
                             <h1 className="text-white">{movie.title}</h1>
                             <h6 className="text-white">By {movie.director}</h6>
                             <p className="text-white">{movie.abstract}</p>
